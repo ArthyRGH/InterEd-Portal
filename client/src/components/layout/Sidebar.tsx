@@ -453,29 +453,49 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     {
       id: 'system-configuration',
       label: 'System Configuration',
-      path: '/system',
+      path: '/settings',
       icon: 'Settings',
       hasChildren: true,
       children: [
         {
-          id: 'system-general',
+          id: 'settings-general',
           label: 'General Settings',
-          path: '/system'
+          path: '/settings/general'
         },
         {
-          id: 'system-branding',
-          label: 'Branding',
-          path: '/system/branding'
+          id: 'settings-users',
+          label: 'User Management',
+          path: '/settings/users'
         },
         {
-          id: 'system-integrations',
-          label: 'Integrations',
-          path: '/system/integrations'
+          id: 'settings-roles',
+          label: 'Roles & Permissions',
+          path: '/settings/roles'
         },
         {
-          id: 'system-backup',
+          id: 'settings-notifications',
+          label: 'Notification Settings',
+          path: '/settings/notifications'
+        },
+        {
+          id: 'settings-email',
+          label: 'Email Configuration',
+          path: '/settings/email'
+        },
+        {
+          id: 'settings-workflows',
+          label: 'Workflow Configuration',
+          path: '/settings/workflows'
+        },
+        {
+          id: 'settings-backup',
           label: 'Backup & Restore',
-          path: '/system/backup'
+          path: '/settings/backup'
+        },
+        {
+          id: 'settings-audit',
+          label: 'Audit Logs',
+          path: '/settings/audit'
         }
       ]
     }

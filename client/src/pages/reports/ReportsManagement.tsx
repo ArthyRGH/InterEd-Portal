@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "wouter";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,8 +7,8 @@ import { Progress } from "@/components/ui/progress";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
-import { Filter, BarChart3, RefreshCcw, FileText, FileDown, Download, Sparkles } from "lucide-react";
-import { REPORT_TABS, REPORT_CATEGORIES, REPORT_FORMATS } from "@/lib/constants";
+import { Filter, BarChart3, RefreshCcw, FileText, FileDown, Download, Sparkles, Users, BarChart2, LineChart } from "lucide-react";
+import { REPORT_TABS, REPORT_CATEGORIES } from "@/lib/constants";
 
 export default function ReportsManagement() {
   const [activeTab, setActiveTab] = useState("standard");
@@ -222,6 +223,64 @@ export default function ReportsManagement() {
         </div>
       </div>
 
+      {/* Featured Reports Section */}
+      <div className="mt-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-semibold">Featured Reports</h2>
+          <Button variant="link" className="text-primary">View All</Button>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Link href="/reports/students">
+            <div className="group cursor-pointer bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-all">
+              <div className="flex items-center mb-4">
+                <div className="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+                  <Users className="h-6 w-6" />
+                </div>
+                <h3 className="font-medium text-lg group-hover:text-blue-600 transition-colors">Student Reports</h3>
+              </div>
+              <p className="text-muted-foreground text-sm mb-4">Comprehensive analytics and insights on student data</p>
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted-foreground">Updated daily</span>
+                <span className="text-blue-600 font-medium group-hover:underline">View Report</span>
+              </div>
+            </div>
+          </Link>
+          
+          <Link href="/reports/agents">
+            <div className="group cursor-pointer bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-all">
+              <div className="flex items-center mb-4">
+                <div className="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+                  <BarChart2 className="h-6 w-6" />
+                </div>
+                <h3 className="font-medium text-lg group-hover:text-green-600 transition-colors">Agent Reports</h3>
+              </div>
+              <p className="text-muted-foreground text-sm mb-4">Performance metrics and analytics for recruitment agents</p>
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted-foreground">Updated daily</span>
+                <span className="text-green-600 font-medium group-hover:underline">View Report</span>
+              </div>
+            </div>
+          </Link>
+          
+          <Link href="/reports/performance">
+            <div className="group cursor-pointer bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-all">
+              <div className="flex items-center mb-4">
+                <div className="p-3 rounded-full bg-purple-100 text-purple-600 mr-4">
+                  <LineChart className="h-6 w-6" />
+                </div>
+                <h3 className="font-medium text-lg group-hover:text-purple-600 transition-colors">Performance Reports</h3>
+              </div>
+              <p className="text-muted-foreground text-sm mb-4">Staff, team, and organizational performance metrics</p>
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted-foreground">Updated daily</span>
+                <span className="text-purple-600 font-medium group-hover:underline">View Report</span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
+      
       <div className="mt-8">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-semibold">Key Performance Indicators</h2>

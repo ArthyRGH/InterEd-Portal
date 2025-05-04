@@ -47,6 +47,9 @@ import AuditTrail from "@/pages/compliance/AuditTrail";
 import PendingApprovals from "@/pages/compliance/PendingApprovals";
 import ReportsManagement from "@/pages/reports/ReportsManagement";
 import ScheduledReports from "@/pages/reports/ScheduledReports";
+import StudentReports from "@/pages/reports/StudentReports";
+import AgentReports from "@/pages/reports/AgentReports";
+import PerformanceReports from "@/pages/reports/PerformanceReports";
 import IntegrationManagement from "@/pages/integrations/IntegrationManagement";
 import ApiLogs from "@/pages/integrations/ApiLogs";
 import Authentication from "@/pages/integrations/Authentication";
@@ -54,6 +57,7 @@ import Monitoring from "@/pages/integrations/Monitoring";
 import Documentation from "@/pages/integrations/Documentation";
 import UserManagement from "@/pages/system/UserManagement";
 import RoleConfiguration from "@/pages/system/RoleConfiguration";
+import ApiManagement from "@/pages/api/ApiManagement";
 import JourneyOverview from "@/pages/journey/JourneyOverview";
 import PreDeparture from "@/pages/journey/PreDeparture";
 import CardsDashboard from "@/pages/cards/CardsDashboard";
@@ -66,6 +70,16 @@ import UpcomingEvents from "@/pages/events/UpcomingEvents";
 import PastEvents from "@/pages/events/PastEvents";
 import EventAnalytics from "@/pages/events/EventAnalytics";
 import ContentDocumentManagement from "@/pages/documents/ContentDocumentManagement";
+
+// Import Settings pages
+import SystemConfiguration from "@/pages/settings/SystemConfiguration";
+import GeneralSettings from "@/pages/settings/GeneralSettings";
+import NotificationSettings from "@/pages/settings/NotificationSettings";
+import EmailConfiguration from "@/pages/settings/EmailConfiguration";
+import WorkflowConfiguration from "@/pages/settings/WorkflowConfiguration";
+import BackupRestore from "@/pages/settings/BackupRestore";
+import AuditLogs from "@/pages/settings/AuditLogs";
+import RolesPermissions from "@/pages/settings/RolesPermissions";
 
 function Router() {
   return (
@@ -348,6 +362,28 @@ function Router() {
         </AppLayout>
       )} />
       
+      {/* API Management Routes */}
+      <Route path="/api" component={() => (
+        <AppLayout>
+          <ApiManagement />
+        </AppLayout>
+      )} />
+      <Route path="/api/docs" component={() => (
+        <AppLayout>
+          <ApiManagement />
+        </AppLayout>
+      )} />
+      <Route path="/api/webhooks" component={() => (
+        <AppLayout>
+          <ApiManagement />
+        </AppLayout>
+      )} />
+      <Route path="/api/logs" component={() => (
+        <AppLayout>
+          <ApiManagement />
+        </AppLayout>
+      )} />
+      
       {/* Content & Document Management Routes */}
       <Route path="/content" component={() => (
         <AppLayout>
@@ -489,6 +525,21 @@ function Router() {
           <ReportsManagement />
         </AppLayout>
       )} />
+      <Route path="/reports/students" component={() => (
+        <AppLayout>
+          <StudentReports />
+        </AppLayout>
+      )} />
+      <Route path="/reports/agents" component={() => (
+        <AppLayout>
+          <AgentReports />
+        </AppLayout>
+      )} />
+      <Route path="/reports/performance" component={() => (
+        <AppLayout>
+          <PerformanceReports />
+        </AppLayout>
+      )} />
       
       {/* API and Integration Management Routes */}
       <Route path="/integrations" component={() => (
@@ -616,37 +667,47 @@ function Router() {
       {/* System Configuration Routes */}
       <Route path="/settings" component={() => (
         <AppLayout>
-          <UserManagement />
+          <SystemConfiguration />
+        </AppLayout>
+      )} />
+      <Route path="/settings/general" component={() => (
+        <AppLayout>
+          <SystemConfiguration />
         </AppLayout>
       )} />
       <Route path="/settings/users" component={() => (
         <AppLayout>
-          <UserManagement />
+          <SystemConfiguration />
         </AppLayout>
       )} />
       <Route path="/settings/roles" component={() => (
         <AppLayout>
-          <RoleConfiguration />
-        </AppLayout>
-      )} />
-      <Route path="/settings/permissions" component={() => (
-        <AppLayout>
-          <UserManagement />
+          <SystemConfiguration />
         </AppLayout>
       )} />
       <Route path="/settings/notifications" component={() => (
         <AppLayout>
-          <UserManagement />
+          <SystemConfiguration />
         </AppLayout>
       )} />
-      <Route path="/settings/branding" component={() => (
+      <Route path="/settings/email" component={() => (
         <AppLayout>
-          <UserManagement />
+          <SystemConfiguration />
         </AppLayout>
       )} />
       <Route path="/settings/workflows" component={() => (
         <AppLayout>
-          <UserManagement />
+          <SystemConfiguration />
+        </AppLayout>
+      )} />
+      <Route path="/settings/backup" component={() => (
+        <AppLayout>
+          <SystemConfiguration />
+        </AppLayout>
+      )} />
+      <Route path="/settings/audit" component={() => (
+        <AppLayout>
+          <SystemConfiguration />
         </AppLayout>
       )} />
       
